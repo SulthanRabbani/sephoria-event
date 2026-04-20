@@ -1,15 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8d5a3;
+  --color-pink: #e8486a;
+  --color-pink-light: #ff6b8a;
+  --color-dark: #0a0a0a;
+  --color-dark-card: #141414;
 
-:root {
-  --gold: #c9a84c;
-  --gold-light: #e8d5a3;
-  --pink: #e8486a;
-  --dark: #0a0a0a;
-  --dark-card: #141414;
+  --font-syncopate: 'Syncopate', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 * {
@@ -24,7 +32,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--dark);
+  background: var(--color-dark);
   color: #fff;
   overflow-x: hidden;
 }
@@ -37,10 +45,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--dark);
+  background: var(--color-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--color-gold);
   border-radius: 3px;
 }
 
@@ -50,7 +58,7 @@ body {
 }
 
 .gold-gradient {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,11 +83,6 @@ body {
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   z-index: 9999;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 .marquee-track {
