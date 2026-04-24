@@ -16,14 +16,38 @@ export type GalleryItem = {
 }
 
 const DEFAULT_ITEMS: GalleryItem[] = [
-  { src: 'https://picsum.photos/seed/seph1/600/900', alt: 'Brand Strategy' },
-  { src: 'https://picsum.photos/seed/seph2/600/600', alt: 'Event Production' },
-  { src: 'https://picsum.photos/seed/seph3/600/900', alt: 'Global Reach' },
-  { src: 'https://picsum.photos/seed/seph4/600/600', alt: 'Creative Vision' },
-  { src: 'https://picsum.photos/seed/seph5/600/600', alt: 'Community' },
-  { src: 'https://picsum.photos/seed/seph6/600/900', alt: 'Digital Media' },
-  { src: 'https://picsum.photos/seed/seph7/600/600', alt: 'Content Creation' },
-  { src: 'https://picsum.photos/seed/seph8/600/600', alt: 'Experiences' },
+  {
+    src: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&h=900&auto=format&fit=crop&q=80',
+    alt: 'Rolex Submariner',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&h=600&auto=format&fit=crop&q=80',
+    alt: 'Chronograph with leather strap',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1618215650148-e8e61eae521c?w=600&h=900&auto=format&fit=crop&q=80',
+    alt: 'Gold & silver dress watch',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1587865501868-36104829d7db?w=600&h=600&auto=format&fit=crop&q=80',
+    alt: 'Gold chronograph',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1619976396248-56d05beb2919?w=600&h=600&auto=format&fit=crop&q=80',
+    alt: 'Silver bracelet watch',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1548171916-c0dea7f94ca6?w=600&h=900&auto=format&fit=crop&q=80',
+    alt: 'Silver analog watch',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1600003014608-c2ccc1570a65?w=600&h=600&auto=format&fit=crop&q=80',
+    alt: 'Silver & black sport watch',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?w=600&h=600&auto=format&fit=crop&q=80',
+    alt: 'White dial round watch',
+  },
 ]
 
 interface BentoGalleryProps {
@@ -102,7 +126,7 @@ export function BentoGallery({ items = DEFAULT_ITEMS }: BentoGalleryProps) {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
-              priority={i === 0}
+              priority={i < 3}
             />
           </div>
         ))}

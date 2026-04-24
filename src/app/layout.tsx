@@ -21,15 +21,15 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'SEPHORiA - The Iconic Beauty Celebration',
-  description: 'The iconic beauty celebration for beauty lovers is on a global tour. SEPHORiA is a global beauty event through a local lens.',
+  title: 'CHRONOLOGIE — Luxury Watches',
+  description: 'CHRONOLOGIE is a curated marketplace for the world\'s most exceptional luxury timepieces. Discover, collect, and trade rare watches with confidence.',
   openGraph: {
-    title: 'SEPHORiA - The Iconic Beauty Celebration',
-    description: 'The iconic beauty celebration for beauty lovers is on a global tour. SEPHORiA is a global beauty event through a local lens.',
+    title: 'CHRONOLOGIE — Luxury Watches',
+    description: 'CHRONOLOGIE is a curated marketplace for the world\'s most exceptional luxury timepieces. Discover, collect, and trade rare watches with confidence.',
     type: 'website',
   },
   icons: {
-    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✨</text></svg>',
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">⌚</text></svg>',
   },
 }
 

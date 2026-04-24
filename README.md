@@ -1,6 +1,6 @@
-# SEPHORiA - Event Website
+# CHRONOLOGIE — Luxury Watches
 
-A luxury beauty event website inspired by [Sephoria](https://event.sephoria.com/), built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **GSAP** for animations.
+A curated marketplace for luxury timepieces, built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **GSAP** for animations.
 
 ## ✨ Features
 
