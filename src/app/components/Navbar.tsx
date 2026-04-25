@@ -30,11 +30,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        hasBg
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${hasBg
           ? 'bg-[#080810]/95 backdrop-blur-md border-b border-white/10'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -51,11 +50,10 @@ export function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className={`text-[11px] tracking-widest uppercase transition-colors duration-200 ${
-                  pathname === href
+                className={`text-[11px] tracking-widest uppercase transition-colors duration-200 ${pathname === href
                     ? 'text-white'
                     : 'text-white/50 hover:text-white'
-                }`}
+                  }`}
               >
                 {label}
               </Link>
@@ -78,19 +76,16 @@ export function Navbar() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${
-                menuOpen ? 'rotate-45 translate-y-[6px]' : ''
-              }`}
+              className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''
+                }`}
             />
             <span
-              className={`block w-5 h-px bg-white transition-all duration-300 ${
-                menuOpen ? 'opacity-0 scale-x-0' : ''
-              }`}
+              className={`block w-5 h-px bg-white transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''
+                }`}
             />
             <span
-              className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${
-                menuOpen ? '-rotate-45 -translate-y-[6px]' : ''
-              }`}
+              className={`block w-5 h-px bg-white transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''
+                }`}
             />
           </button>
         </div>
@@ -104,9 +99,8 @@ export function Navbar() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`block text-xs tracking-widest uppercase py-3 transition-colors ${
-                    pathname === href ? 'text-white' : 'text-white/50'
-                  }`}
+                  className={`block text-xs tracking-widest uppercase py-3 transition-colors ${pathname === href ? 'text-white' : 'text-white/50'
+                    }`}
                 >
                   {label}
                 </Link>

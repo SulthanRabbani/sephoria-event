@@ -93,11 +93,10 @@ export function CatalogueClient() {
                 <button
                   key={c}
                   onClick={() => setCondition(c)}
-                  className={`text-[11px] tracking-widest uppercase px-3 py-2 rounded-full border transition-colors duration-200 ${
-                    condition === c
+                  className={`text-[11px] tracking-widest uppercase px-3 py-2 rounded-full border transition-colors duration-200 ${condition === c
                       ? 'bg-[#FF4D6D] border-[#FF4D6D] text-white'
                       : 'border-white/20 text-white/50 hover:border-white/40 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {c}
                 </button>

@@ -23,11 +23,10 @@ export function WatchCard({ watch, priority = false }: WatchCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute top-3 left-3">
           <span
-            className={`text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full border ${
-              watch.condition === 'New'
+            className={`text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full border ${watch.condition === 'New'
                 ? 'bg-[#FF4D6D]/15 text-[#FF4D6D] border-[#FF4D6D]/30'
                 : 'bg-white/10 text-white/60 border-white/20'
-            }`}
+              }`}
           >
             {watch.condition}
           </span>

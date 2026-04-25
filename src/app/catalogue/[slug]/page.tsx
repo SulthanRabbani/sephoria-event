@@ -101,11 +101,10 @@ export default async function WatchDetailPage({ params }: Props) {
               ${watch.price.toLocaleString()}
             </span>
             <span
-              className={`text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full border ${
-                watch.condition === 'New'
+              className={`text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full border ${watch.condition === 'New'
                   ? 'bg-[#FF4D6D]/15 text-[#FF4D6D] border-[#FF4D6D]/30'
                   : 'bg-white/10 text-white/60 border-white/20'
-              }`}
+                }`}
             >
               {watch.condition}
             </span>
