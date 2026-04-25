@@ -18,6 +18,18 @@
     background: #080810;
     color: #fff;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+
+  /* Minimum tap target size for mobile */
+  button,
+  [role='button'] {
+    min-height: 44px;
   }
 }
 
