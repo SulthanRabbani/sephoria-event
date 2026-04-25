@@ -2,21 +2,22 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SEPHORiA - The Iconic Beauty Celebration',
-  description: 'The iconic beauty celebration for beauty lovers is on a global tour. SEPHORiA is a global beauty event through a local lens.',
+  title: 'Chronologie — Curated Timepieces',
+  description:
+    'Chronologie is a luxury watch atelier for collectors seeking considered curation, quiet appointments, and enduring mechanical references.',
   icons: {
-    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✨</text></svg>',
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="86">⌚</text></svg>',
   },
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className="noise">{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
