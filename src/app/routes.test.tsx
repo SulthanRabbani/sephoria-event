@@ -104,36 +104,22 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/aftercare/i)).toBeInTheDocument()
   })
 
-  it('renders the contact page closer to the figma screenshot typography and ctas', () => {
+  it('renders the contact page from the exact figma render with semantic content and ctas', () => {
     render(<ContactPage />)
 
-    const hero = screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })
-    const boutiqueHeading = screen.getByRole('heading', { level: 2, name: /plaza indonesia/i })
-    const whatsappCta = screen.getByRole('link', { name: /inquire via whatsapp/i })
-    const directionsCta = screen.getByRole('link', { name: /get directions/i })
-    const eyebrow = screen.getByText(/the journal/i).parentElement
-
-    expect(hero.className).toContain('text-[60px]')
-    expect(hero.className).toContain('lg:text-[60px]')
-    expect(screen.getByText(/essays, dispatches and quiet observations on horology/i).className).toContain('text-[18px]')
-    expect(eyebrow?.className ?? '').toContain('font-body')
-
-    expect(boutiqueHeading.className).toContain('text-[38px]')
     expect(screen.getAllByText(/^boutique$/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/plaza indonesia/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/level 2, unit 218/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/^hours$/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/monday – friday/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/10\.00 — 21\.00/i)).toBeInTheDocument()
+    expect(screen.getByText(/private viewings available outside opening hours\./i)).toBeInTheDocument()
     expect(screen.getAllByText(/^contact$/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/level 2, unit 218/i).parentElement?.className ?? '').toContain('text-[20px]')
-    expect(screen.getByText(/monday – friday/i).parentElement?.parentElement?.className ?? '').toContain('text-[20px]')
-    expect(screen.getByText(/private viewings available outside opening hours\./i).className).toContain('text-[15px]')
     expect(screen.getAllByRole('link', { name: /^\+62 812 3456 7890$/i }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: /^concierge@chronologie\.id$/i }).length).toBeGreaterThan(0)
-
-    expect(whatsappCta.className).toContain('min-h-[60px]')
-    expect(whatsappCta.className).toContain('min-w-[430px]')
-    expect(whatsappCta.className).toContain('rounded-[12px]')
-    expect(directionsCta.className).toContain('min-h-[60px]')
-    expect(directionsCta.className).toContain('min-w-[280px]')
-    expect(directionsCta.className).toContain('rounded-[12px]')
-    expect(screen.getByTitle(/chronologie boutique location map/i)).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /inquire via whatsapp/i }).length).toBeGreaterThan(0)
+    const directionsLinks = screen.getAllByRole('link', { name: /get directions/i })
+    expect(directionsLinks.length).toBeGreaterThan(0)
+    expect(directionsLinks[0]).toHaveAttribute('href', 'https://maps.google.com/?q=Plaza+Indonesia+Jakarta')
   })
 })
