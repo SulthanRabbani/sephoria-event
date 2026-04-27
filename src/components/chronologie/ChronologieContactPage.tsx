@@ -77,8 +77,8 @@ function MailIcon() {
 
 function SectionLabel({ icon, children }: { icon: ReactNode; children: ReactNode }) {
   return (
-    <div className="flex items-center gap-[14px] font-body text-[13px] font-medium uppercase tracking-[0.24em] text-[var(--color-accent)]">
-      <span className="inline-flex h-[22px] w-[22px] items-center justify-center">{icon}</span>
+    <div className="flex items-center gap-4 font-body text-[13px] font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">
+      <span className="inline-flex h-[18px] w-[18px] items-center justify-center">{icon}</span>
       <span>{children}</span>
     </div>
   )
@@ -131,48 +131,48 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
         <section className="px-6 pb-16 pt-8 md:px-10 lg:px-16 lg:pb-[88px] lg:pt-[44px]">
           <div className="mx-auto flex max-w-[920px] flex-col items-center text-center">
             <div className="flex items-center gap-5 font-body text-[14px] font-medium uppercase tracking-[0.24em] text-[var(--color-accent)]">
-              <span className="h-px w-[66px] bg-[rgba(143,122,90,0.48)]" />
+              <span className="h-px w-[56px] bg-[rgba(216,208,197,1)]" />
               <span>{data.hero.eyebrow}</span>
-              <span className="h-px w-[66px] bg-[rgba(143,122,90,0.48)]" />
+              <span className="h-px w-[56px] bg-[rgba(216,208,197,1)]" />
             </div>
-            <h1 className="mt-7 max-w-[720px] font-display text-[60px] leading-[64px] tracking-[-0.03em] text-[var(--color-primary-700)] lg:text-[60px]">
+            <h1 className="mt-7 max-w-[760px] font-display text-[60px] leading-[1.04] tracking-[-0.02em] text-[var(--color-primary-700)]">
               {data.hero.title}
             </h1>
-            <p className="mt-8 max-w-[720px] text-[18px] leading-[30px] text-[rgba(58,51,46,0.82)]">
+            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.6] text-[#3E3935]">
               {data.hero.description}
             </p>
           </div>
         </section>
 
         <section id="boutique" className="px-6 pb-[78px] md:px-10 lg:px-16 lg:pb-[96px]">
-          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.95fr_1.15fr] lg:gap-[72px]">
-            <div className="pt-2">
+          <div className="mx-auto grid max-w-[1520px] gap-12 lg:grid-cols-[420px_1fr] lg:gap-[72px]">
+            <div className="w-[420px] pt-2">
               <SectionLabel icon={<MarkerIcon />}>{data.boutique.label}</SectionLabel>
-              <h2 className="mt-6 font-display text-[38px] leading-[46px] tracking-[-0.02em] text-[var(--color-primary-700)]">
+              <h2 className="mt-5 font-display text-[28px] leading-[1.2] tracking-[-0.02em] text-[var(--color-primary-700)]">
                 {data.boutique.title}
               </h2>
-              <div className="mt-5 space-y-1 text-[20px] leading-[32px] text-[rgba(58,51,46,0.88)]">
+              <div className="mt-4 max-w-[360px] space-y-0 text-[18px] leading-[1.7] text-[#332E2A]">
                 {data.boutique.addressLines.map((line) => (
                   <p key={line}>{line}</p>
                 ))}
               </div>
 
-              <div className="mt-16">
+              <div className="mt-12">
                 <SectionLabel icon={<ClockIcon />}>{data.hours.label}</SectionLabel>
-                <div className="mt-6 space-y-4 text-[20px] leading-[32px] text-[rgba(58,51,46,0.88)]">
+                <div className="mt-5 grid max-w-[380px] grid-cols-[1fr_auto] gap-x-10 gap-y-3 text-[18px] leading-[1.55] text-[#332E2A]">
                   {data.hours.rows.map((row) => (
-                    <div key={row.day} className="grid grid-cols-[1fr_auto] items-center gap-8">
+                    <div key={row.day} className="contents">
                       <span>{row.day}</span>
-                      <span>{row.time}</span>
+                      <span className="text-right">{row.time}</span>
                     </div>
                   ))}
                 </div>
-                <p className="mt-6 text-[15px] leading-[22px] text-[var(--color-accent)]">{data.hours.note}</p>
+                <p className="mt-4 text-[16px] leading-[1.6] text-[#8B7A63]">{data.hours.note}</p>
               </div>
 
-              <div className="mt-16">
+              <div className="mt-12">
                 <SectionLabel icon={<ContactIcon />}>{data.contact.label}</SectionLabel>
-                <div className="mt-6 space-y-4 text-[20px] leading-[32px] text-[rgba(58,51,46,0.88)]">
+                <div className="mt-5 space-y-2 text-[18px] leading-[1.65] text-[#332E2A]">
                   <a href={data.contact.phone.href} className="inline-flex items-center gap-3 transition hover:text-[var(--color-primary-500)]">
                     <ContactIcon />
                     <span>{data.contact.phone.label}</span>
@@ -184,22 +184,22 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
                 </div>
               </div>
 
-              <div className="mt-16 flex flex-col gap-7 sm:flex-row sm:items-center sm:gap-7">
+              <div className="mt-10 flex flex-col gap-[25px] sm:flex-row sm:items-center sm:gap-[25px]">
                 <CTAButton
                   action={data.actions.primary}
                   variant="dark"
                   icon="whatsapp"
-                  className="min-h-[60px] min-w-[430px] justify-center rounded-[12px] px-7 text-[15px] tracking-[0.16em]"
+                  className="min-h-[50px] min-w-[243px] justify-center rounded-[4px] px-8 text-[12px] tracking-[0.18em]"
                 />
                 <CTAButton
                   action={data.actions.secondary}
                   variant="outline-dark"
-                  className="min-h-[60px] min-w-[280px] justify-center rounded-[12px] px-7 text-[15px] tracking-[0.16em]"
+                  className="min-h-[50px] min-w-[203px] justify-center rounded-[4px] px-8 text-[12px] tracking-[0.18em]"
                 />
               </div>
             </div>
 
-            <div className="relative min-h-[620px] overflow-hidden rounded-[2px] bg-[#ddd4c3] shadow-[0_16px_48px_rgba(40,31,24,0.08)]">
+            <div className="relative w-full max-w-[820px] aspect-[4/3] overflow-hidden rounded-[2px] bg-[#ddd4c3] shadow-[0_16px_48px_rgba(40,31,24,0.08)]">
               <iframe
                 title={data.map.title}
                 src={data.map.src}

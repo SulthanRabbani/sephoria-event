@@ -1,11 +1,10 @@
-import path from "node:path";
-import type { NextConfig } from "next";
+import * as path from 'node:path'
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["127.0.0.1", "localhost"],
   turbopack: {
-    root: path.resolve(__dirname),
+    root: path.resolve(process.cwd()),
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
