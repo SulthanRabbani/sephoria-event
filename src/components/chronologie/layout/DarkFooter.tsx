@@ -4,33 +4,35 @@ type DarkFooterProps = Pick<ChronologieLandingData, 'brand' | 'footer'>
 
 export function DarkFooter({ brand, footer }: DarkFooterProps) {
   return (
-    <footer id="contact" className="bg-[var(--color-primary-700)] text-[var(--color-white)]">
-      <div className="mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-16 md:grid-cols-[1.2fr_repeat(3,1fr)] md:px-10 md:py-20">
-        <div className="max-w-[320px]">
-          <p className="font-display text-[38px] font-normal tracking-[0.03em] md:text-[44px]">{brand}</p>
-          <p className="text-title mt-5 text-white/62">{footer.description}</p>
+    <footer id="contact" className="bg-[#2b2622] text-[#f1ece6]">
+      <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-10 lg:px-16 lg:pb-10 lg:pt-16">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_0.8fr_1.1fr_0.9fr] lg:gap-x-16">
+          <div className="max-w-[320px]">
+            <p className="font-display text-[38px] font-light leading-none tracking-[-0.01em] text-[#f4eee8]">{brand}</p>
+            <p className="mt-5 text-[16px] leading-7 text-[#b7aba0]">{footer.description}</p>
+          </div>
+
+          {footer.columns.map((column) => (
+            <div key={column.title}>
+              <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#a79a8f]">{column.title}</p>
+              <ul className="mt-4 space-y-3 text-[14px] leading-5 text-[#f1ece6]">
+                {column.items.map((item) => (
+                  <li key={item.label}>
+                    <a href={item.href} className="transition hover:text-white/72">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {footer.columns.map((column) => (
-          <div key={column.title}>
-            <p className="text-subtitle text-[var(--color-secondary-300)]">{column.title}</p>
-            <ul className="mt-5 space-y-3 text-[18px] leading-7 text-white/72">
-              {column.items.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="transition hover:text-white">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-12 border-t border-[#4a413b] pt-6">
+          <div className="flex flex-col gap-3 text-[12px] text-[#8f847a] md:flex-row md:items-center md:justify-between">
+            <span>{footer.legalLeft}</span>
+            <span className="uppercase tracking-[0.18em] text-[#9c9085]">{footer.legalRight}</span>
           </div>
-        ))}
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-3 px-6 py-5 text-white/42 md:flex-row md:items-center md:justify-between md:px-10">
-          <span className="text-subtitle">{footer.legalLeft}</span>
-          <span className="text-subtitle">{footer.legalRight}</span>
         </div>
       </div>
     </footer>

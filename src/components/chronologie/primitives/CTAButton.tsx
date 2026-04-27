@@ -2,26 +2,31 @@ import type { ActionLink } from '@/types/chronologie'
 
 type CTAButtonProps = {
   action: ActionLink
-  variant?: 'dark' | 'light' | 'outline-dark' | 'outline-light'
+  variant?: 'dark' | 'light' | 'outline-dark' | 'outline-light' | 'dark-hero'
   className?: string
+  icon?: 'whatsapp'
 }
 
-export function CTAButton({ action, variant = 'dark', className = '' }: CTAButtonProps) {
+export function CTAButton({ action, variant = 'dark', className = '', icon }: CTAButtonProps) {
   const classes = {
-    dark: 'border-[var(--color-primary-700)] bg-[var(--color-primary-700)] text-[var(--color-white)] hover:bg-[var(--color-primary-600)] hover:border-[var(--color-primary-600)]',
-    light:
-      'border-[rgba(250,250,250,0.92)] bg-[rgba(250,250,250,0.96)] text-[var(--color-primary-700)] hover:bg-[var(--color-white)]',
-    'outline-dark':
-      'border-[var(--color-border)] bg-transparent text-[var(--color-primary-600)] hover:border-[var(--color-primary-500)] hover:bg-[var(--color-primary-50)] hover:text-[var(--color-primary-700)]',
-    'outline-light': 'border-white/26 bg-transparent text-[var(--color-white)] hover:border-white/50 hover:bg-white/8',
+    dark: 'border-[#352d27] bg-[#352d27] text-[#f3ede7] hover:bg-[#2a241f] hover:border-[#2a241f]',
+    light: 'border-[#f3ede7] bg-[#f3ede7] text-[#1e1a17] hover:bg-white hover:border-white',
+    'outline-dark': 'border-[#3b332d] bg-transparent text-[#2f2924] hover:bg-[#2f2924] hover:text-[#f3ede7]',
+    'outline-light': 'border-white/70 bg-transparent text-white hover:bg-white hover:text-[#1e1a17]',
+    'dark-hero': 'border-[#211c18] bg-[#211c18]/90 text-[#f3ede7] hover:bg-[#171311] hover:border-[#171311]',
   }
 
   return (
     <a
       href={action.href}
-      className={`text-button inline-flex min-h-12 items-center justify-center border px-6 py-3 transition duration-300 ${classes[variant]} ${className}`}
+      className={`inline-flex min-h-[48px] items-center justify-center gap-3 rounded-[8px] border px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.02em] transition duration-300 ${classes[variant]} ${className}`}
     >
-      {action.label}
+      <span>{action.label}</span>
+      {icon === 'whatsapp' && (
+        <span aria-hidden="true" className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-current text-[9px] leading-none">
+          W
+        </span>
+      )}
     </a>
   )
 }

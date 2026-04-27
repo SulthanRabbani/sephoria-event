@@ -33,6 +33,7 @@ export type WatchCard = {
   cta: string
   tone: WatchCardTone
   size: WatchCardSize
+  image?: string
 }
 
 export type ArticleCardTone = 'vintage' | 'craft' | 'modern'
@@ -44,6 +45,7 @@ export type ArticleCard = {
   excerpt: string
   href: string
   tone: ArticleCardTone
+  image?: string
 }
 
 export type ChronologieLandingData = {
@@ -93,9 +95,9 @@ export type ChronologieLandingData = {
   }
 
   hero?: {
-    eyebrow: string
     title: string
     description: string
+    image?: string
     primaryAction: ActionLink
     secondaryAction: ActionLink
   }
@@ -111,12 +113,14 @@ export type ChronologieLandingData = {
     eyebrow: string
     title: string
     description: string
+    image?: string
     action: ActionLink
   }
   invitation?: {
     eyebrow: string
     title: string
     description: string
+    image?: string
     action: ActionLink
   }
   journal?: {

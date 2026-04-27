@@ -1,42 +1,44 @@
-import type { ChronologieLandingData } from '@/types/chronologie'
+import Image from 'next/image'
 
-import { SectionHeading } from '../primitives/SectionHeading'
-import { SectionShell } from '../primitives/SectionShell'
+import type { ChronologieLandingData } from '@/types/chronologie'
 
 type ManifestoSectionProps = {
   craft: NonNullable<ChronologieLandingData['craft']>
 }
 
 export function ManifestoSection({ craft }: ManifestoSectionProps) {
+  const paragraphs = craft.description.split('\n\n')
+
   return (
-    <SectionShell id="about" tone="cream" className="py-20 md:py-28">
-      <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-        <div className="relative min-h-[520px] overflow-hidden rounded-[32px] border border-black/6 bg-[linear-gradient(135deg,#7a5337_0%,#c28c57_36%,#f0d7b7_100%)]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_22%,rgba(255,255,255,0.2),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(53,34,23,0.18))]" />
-          <div className="absolute left-[7%] top-[16%] h-[360px] w-[300px] rounded-[40px] bg-[linear-gradient(145deg,rgba(154,111,75,0.98),rgba(78,53,34,0.96))] shadow-[0_24px_80px_rgba(71,44,28,0.3)]" />
-          <div className="absolute left-[18%] top-[42%] h-[170px] w-[170px] rounded-full border border-[rgba(255,255,255,0.34)] bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.72),rgba(219,205,188,0.7)_34%,rgba(121,107,92,0.94)_72%)] shadow-[0_16px_36px_rgba(0,0,0,0.22)]" />
-          <div className="absolute left-[24%] top-[48%] h-[100px] w-[100px] rounded-full border border-[rgba(255,255,255,0.45)]" />
-          <div className="absolute left-[28%] top-[52%] h-[2px] w-[72px] rotate-[16deg] bg-[linear-gradient(90deg,rgba(77,56,42,0.8),transparent)]" />
-          <div className="absolute left-[29%] top-[53%] h-[2px] w-[48px] -rotate-[46deg] bg-[linear-gradient(90deg,rgba(255,255,255,0.95),transparent)]" />
-          <div className="absolute right-[16%] top-[20%] h-[250px] w-[170px] rotate-[14deg] rounded-[90px] bg-[linear-gradient(180deg,rgba(99,67,46,0.95),rgba(45,29,20,0.96))] shadow-[0_18px_50px_rgba(0,0,0,0.22)]" />
-          <div className="absolute right-[10%] bottom-[10%] h-[170px] w-[230px] rotate-[-12deg] rounded-[120px] bg-[linear-gradient(180deg,rgba(147,110,78,0.92),rgba(83,54,34,0.96))]" />
-          <div className="absolute left-[56%] top-[48%] h-[4px] w-[120px] rotate-[-24deg] rounded-full bg-[linear-gradient(90deg,rgba(32,23,18,0.85),rgba(32,23,18,0))]" />
+    <section id="about" className="bg-[#ded7c4] px-6 py-16 text-[#231d18] md:px-10 md:py-20 lg:px-16 lg:py-24">
+      <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[600px_minmax(0,680px)] lg:items-center lg:justify-between lg:gap-8">
+        <div className="relative h-[420px] overflow-hidden bg-[#cabca5] sm:h-[560px] lg:h-[745px]">
+          {craft.image && <Image src={craft.image} alt="Chronologie philosophy watchmaking" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover object-center" />}
         </div>
 
-        <div>
-          <SectionHeading
-            eyebrow={craft.eyebrow}
-            title={craft.title}
-            description={craft.description}
-            decorated={false}
-          />
+        <div className="lg:pl-8">
+          <div className="flex items-center gap-4 lg:justify-start">
+            <span className="h-px w-12 bg-[#8e8477]/60" />
+            <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-[#6e655b]">{craft.eyebrow}</p>
+            <span className="h-px w-12 bg-[#8e8477]/60" />
+          </div>
 
-          <a href={craft.action.href} className="mt-8 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[var(--color-ink)] transition hover:text-[var(--color-copy)]">
+          <h2 className="mt-6 whitespace-pre-line font-display text-[42px] font-light leading-none tracking-[-0.01em] text-[#231d18] md:text-[48px]">
+            {craft.title}
+          </h2>
+
+          <div className="mt-8 space-y-6 text-[16px] leading-7 text-[#4f4840]">
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+
+          <a href={craft.action.href} className="mt-8 inline-flex items-center gap-2 border-b border-[#231d18] pb-1 text-[12px] font-semibold uppercase tracking-[0.02em] text-[#231d18] transition hover:text-[#5a5148] hover:border-[#5a5148]">
             {craft.action.label}
             <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
-    </SectionShell>
+    </section>
   )
 }

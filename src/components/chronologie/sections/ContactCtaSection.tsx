@@ -1,7 +1,6 @@
 import type { ChronologieLandingData } from '@/types/chronologie'
 
 import { CTAButton } from '../primitives/CTAButton'
-import { SectionShell } from '../primitives/SectionShell'
 
 type ContactCtaSectionProps = {
   contactCta: NonNullable<ChronologieLandingData['contactCta']>
@@ -9,20 +8,18 @@ type ContactCtaSectionProps = {
 
 export function ContactCtaSection({ contactCta }: ContactCtaSectionProps) {
   return (
-    <SectionShell id="contact-cta" tone="cream" className="pb-20 md:pb-28">
-      <div className="rounded-[32px] bg-[var(--color-sand)] px-6 py-16 text-center md:px-10 md:py-20">
-        <div className="mx-auto max-w-[760px]">
-          <h2 className="font-display text-4xl leading-[0.95] text-[var(--color-ink)] md:text-5xl lg:text-[56px]">
-            {contactCta.title}
-          </h2>
-          <p className="mt-5 text-base leading-7 text-[var(--color-copy)]">{contactCta.description}</p>
+    <section id="contact-cta" className="bg-[#ded7c4] px-6 py-16 text-center text-[#2f2924] md:px-10 md:py-20 lg:px-16 lg:py-24">
+      <div className="mx-auto max-w-[760px]">
+        <h2 className="font-display text-[42px] font-light leading-none tracking-[-0.01em] text-[#2f2924] md:text-[48px]">
+          {contactCta.title}
+        </h2>
+        <p className="mx-auto mt-4 max-w-[680px] text-[16px] leading-7 text-[#4f4840]">{contactCta.description}</p>
 
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-            <CTAButton action={contactCta.primaryAction} variant="dark" />
-            <CTAButton action={contactCta.secondaryAction} variant="outline-dark" />
-          </div>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+          <CTAButton action={contactCta.primaryAction} variant="dark" icon="whatsapp" />
+          <CTAButton action={contactCta.secondaryAction} variant="outline-dark" />
         </div>
       </div>
-    </SectionShell>
+    </section>
   )
 }

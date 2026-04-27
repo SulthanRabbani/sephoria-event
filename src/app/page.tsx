@@ -1,6 +1,6 @@
-import { ChronologieLanding } from '@/components/chronologie/ChronologieLanding'
+import { ChronologieHomePage } from '@/components/chronologie/ChronologieHomePage'
 import { chronologieHome } from '@/content/chronologie/home'
 
 export default function Home() {
-  return <ChronologieLanding data={chronologieHome} />
+  return <ChronologieHomePage data={chronologieHome} />
 }

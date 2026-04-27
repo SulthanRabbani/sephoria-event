@@ -3,62 +3,85 @@ import { describe, expect, it } from 'vitest'
 
 import Home from './page'
 
-describe('Chronologie about page', () => {
-  it('renders the editorial about-page structure from the approved screenshot', () => {
+describe('Chronologie homepage', () => {
+  it('renders the homepage hero, featured collection, editorial sections, and footer from the Figma design', () => {
     render(<Home />)
 
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /a house built on patience, provenance, and quiet conviction\./i,
+        name: /time, considered\s+with intention\./i,
       })
     ).toBeInTheDocument()
 
-    expect(screen.getByText(/about chronologie/i)).toBeInTheDocument()
-    expect(screen.getAllByRole('link', { name: /visit the store/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /inquire via whatsapp/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /explore collection/i }).length).toBeGreaterThan(0)
 
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: /our story/i,
+        name: /a curated selection of exceptional timepieces/i,
+      })
+    ).toBeInTheDocument()
+
+    expect(screen.getByText(/submariner\s+no-date/i)).toBeInTheDocument()
+    expect(screen.getByText(/ref\. 5172g/i)).toBeInTheDocument()
+    expect(screen.getByText(/cosmograph\s+daytona/i)).toBeInTheDocument()
+    expect(screen.getByText(/calatrava\s+ultra-thin/i)).toBeInTheDocument()
+    expect(screen.getByText(/datejust 36/i)).toBeInTheDocument()
+    expect(screen.getByText(/royal oak/i)).toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: /we do not sell watches\.\s+we curate them\./i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: /vision/i,
+        name: /an invitation to spend time with time\./i,
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: /mission/i,
+        name: /insights on time, craftsmanship, and collecting/i,
       })
     ).toBeInTheDocument()
+
+    expect(screen.getByText(/the art of collecting vintage rolex/i)).toBeInTheDocument()
+    expect(screen.getByText(/inside patek philippe craftsmanship/i)).toBeInTheDocument()
+    expect(screen.getByText(/what defines a modern luxury watch/i)).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: /the service/i,
+        name: /begin a quiet conversation\./i,
       })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
+    expect(screen.getByText(/authorised pre-owned specialists/i)).toBeInTheDocument()
   })
 
-  it('shows the service list and boutique contact details from the screenshot', () => {
+  it('renders the homepage navigation and boutique details from the Figma copy', () => {
     render(<Home />)
 
-    expect(screen.getAllByText(/personal sourcing/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/full authentication/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/private viewings/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/aftercare/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/plaza indonesia, level 3/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^home$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^collection$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^journal$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^about$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^contact$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /visit the store/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /book a private viewing/i }).length).toBeGreaterThan(0)
+
+    expect(screen.getAllByText(/plaza indonesia, level 2/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/jl\. m\.h\. thamrin kav\. 28.?30/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/jakarta pusat 10350/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/\+62 812 3456 7890/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/concierge@chronologie\.id/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/\+62 813 3366 7890/i).length).toBeGreaterThan(0)
   })
 })
