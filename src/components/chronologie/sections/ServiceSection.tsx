@@ -19,15 +19,15 @@ export function ServiceSection({ service }: ServiceSectionProps) {
         </div>
 
         <div className="flex flex-col justify-center px-1 py-2 md:px-4 lg:px-8">
-          <h2 className="text-[11px] font-medium uppercase tracking-[0.34em] text-[var(--color-accent)]">{service.eyebrow}</h2>
-          <p className="mt-5 max-w-[620px] font-display text-[40px] leading-[0.98] text-[var(--color-ink)] md:text-[52px] lg:text-[58px]">{service.title}</p>
-          <p className="mt-6 max-w-[620px] text-[16px] leading-8 text-[var(--color-copy)] md:text-[17px]">{service.description}</p>
+          <h2 className="text-subtitle text-[var(--color-accent)]">{service.eyebrow}</h2>
+          <p className="text-h2 mt-5 max-w-[620px]">{service.title}</p>
+          <p className="text-body mt-6 max-w-[620px] text-[var(--color-copy)]">{service.description}</p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {service.items.map((item) => (
               <article key={item.title} className="rounded-[22px] border border-[var(--color-border)] bg-[rgba(250,250,250,0.78)] p-5">
-                <h3 className="font-display text-[30px] leading-none text-[var(--color-ink)]">{item.title}</h3>
-                <p className="mt-3 text-[14px] leading-7 text-[var(--color-copy)]">{item.description}</p>
+                <h3 className="text-h4">{item.title}</h3>
+                <p className="text-title mt-3 text-[var(--color-copy)]">{item.description}</p>
               </article>
             ))}
           </div>
@@ -35,8 +35,8 @@ export function ServiceSection({ service }: ServiceSectionProps) {
           <div className="mt-8 grid gap-4 border-t border-[var(--color-border)] pt-6 md:grid-cols-3">
             {service.notes.map((note) => (
               <div key={note.label}>
-                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">{note.label}</p>
-                <p className="mt-3 text-[14px] leading-7 text-[var(--color-copy)]">{note.value}</p>
+                <p className="text-subtitle text-[var(--color-accent)]">{note.label}</p>
+                <p className="text-title mt-3 text-[var(--color-copy)]">{note.value}</p>
               </div>
             ))}
           </div>

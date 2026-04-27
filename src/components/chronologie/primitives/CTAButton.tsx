@@ -19,7 +19,7 @@ export function CTAButton({ action, variant = 'dark', className = '' }: CTAButto
   return (
     <a
       href={action.href}
-      className={`inline-flex min-h-12 items-center justify-center border px-6 py-3 text-[11px] font-medium uppercase tracking-[0.28em] transition duration-300 ${classes[variant]} ${className}`}
+      className={`text-button inline-flex min-h-12 items-center justify-center border px-6 py-3 transition duration-300 ${classes[variant]} ${className}`}
     >
       {action.label}
     </a>

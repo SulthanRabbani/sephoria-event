@@ -16,10 +16,10 @@ export function BoutiqueImageSection({ boutique }: BoutiqueImageSectionProps) {
         </div>
 
         <div className="flex flex-col justify-center border-t border-[var(--color-border-soft)] pt-6 md:border-l md:border-t-0 md:pt-0 md:pl-8 lg:pl-10">
-          <p className="text-[11px] font-medium uppercase tracking-[0.34em] text-[var(--color-accent)]">{boutique.overline}</p>
-          <h2 className="mt-5 font-display text-[36px] leading-[0.98] text-[var(--color-ink)] md:text-[44px] lg:text-[52px]">{boutique.title}</h2>
-          <p className="mt-6 text-[16px] leading-8 text-[var(--color-copy)]">{boutique.description}</p>
-          <p className="mt-5 text-[14px] leading-7 text-[var(--color-muted)]">{boutique.detail}</p>
+          <p className="text-subtitle text-[var(--color-accent)]">{boutique.overline}</p>
+          <h2 className="text-h3 mt-5 lg:text-[52px]">{boutique.title}</h2>
+          <p className="text-body mt-6 text-[var(--color-copy)]">{boutique.description}</p>
+          <p className="text-subtitle mt-5 text-[var(--color-muted)] normal-case tracking-[0.08em]">{boutique.detail}</p>
         </div>
       </div>
     </section>
