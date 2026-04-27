@@ -1,6 +1,5 @@
-import { ChronologieHomePage } from '@/components/chronologie/ChronologieHomePage'
-import { chronologieHome } from '@/content/chronologie/home'
+import { HomeRenderPage } from '@/content/chronologie/render-pages'
 
 export default function Home() {
-  return <ChronologieHomePage data={chronologieHome} />
+  return <HomeRenderPage />
 }

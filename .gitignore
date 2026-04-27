@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local figma extraction caches
+.figma-home-cache/
+.figma-full-cache/
