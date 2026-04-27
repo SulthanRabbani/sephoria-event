@@ -104,34 +104,36 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/aftercare/i)).toBeInTheDocument()
   })
 
-  it('renders the contact page with figma-aligned typography and CTA sizing', () => {
+  it('renders the contact page closer to the figma screenshot typography and ctas', () => {
     render(<ContactPage />)
 
     const hero = screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })
     const boutiqueHeading = screen.getByRole('heading', { level: 2, name: /plaza indonesia/i })
     const whatsappCta = screen.getByRole('link', { name: /inquire via whatsapp/i })
     const directionsCta = screen.getByRole('link', { name: /get directions/i })
+    const eyebrow = screen.getByText(/the journal/i).parentElement
 
-    expect(hero).toBeInTheDocument()
-    expect(hero.className).toContain('text-[54px]')
-    expect(hero.className).toContain('lg:text-[64px]')
+    expect(hero.className).toContain('text-[60px]')
+    expect(hero.className).toContain('lg:text-[60px]')
     expect(screen.getByText(/essays, dispatches and quiet observations on horology/i).className).toContain('text-[18px]')
+    expect(eyebrow?.className ?? '').toContain('font-body')
 
-    expect(boutiqueHeading).toBeInTheDocument()
-    expect(boutiqueHeading.className).toContain('text-[24px]')
+    expect(boutiqueHeading.className).toContain('text-[38px]')
     expect(screen.getAllByText(/^boutique$/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/^hours$/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/^contact$/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/level 2, unit 218/i).parentElement?.className ?? '').toContain('text-[20px]')
+    expect(screen.getByText(/monday – friday/i).parentElement?.parentElement?.className ?? '').toContain('text-[20px]')
     expect(screen.getByText(/private viewings available outside opening hours\./i).className).toContain('text-[15px]')
     expect(screen.getAllByRole('link', { name: /^\+62 812 3456 7890$/i }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: /^concierge@chronologie\.id$/i }).length).toBeGreaterThan(0)
 
-    expect(whatsappCta.className).toContain('min-h-[56px]')
-    expect(whatsappCta.className).toContain('min-w-[320px]')
-    expect(whatsappCta.className).toContain('rounded-[8px]')
-    expect(directionsCta.className).toContain('min-h-[56px]')
-    expect(directionsCta.className).toContain('min-w-[220px]')
-    expect(directionsCta.className).toContain('rounded-[8px]')
+    expect(whatsappCta.className).toContain('min-h-[60px]')
+    expect(whatsappCta.className).toContain('min-w-[430px]')
+    expect(whatsappCta.className).toContain('rounded-[12px]')
+    expect(directionsCta.className).toContain('min-h-[60px]')
+    expect(directionsCta.className).toContain('min-w-[280px]')
+    expect(directionsCta.className).toContain('rounded-[12px]')
     expect(screen.getByTitle(/chronologie boutique location map/i)).toBeInTheDocument()
   })
 })
