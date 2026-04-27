@@ -76,7 +76,7 @@ function MailIcon() {
 
 function SectionLabel({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">
+    <div className="flex items-center gap-3 text-[14px] font-medium uppercase tracking-[0.22em] text-[var(--color-accent)]">
       <span className="inline-flex h-[18px] w-[18px] items-center justify-center">{icon}</span>
       <span>{children}</span>
     </div>
@@ -131,15 +131,15 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
       <main>
         <section className="px-6 pb-16 pt-8 md:px-10 lg:px-16 lg:pb-[88px] lg:pt-[44px]">
           <div className="mx-auto flex max-w-[920px] flex-col items-center text-center">
-            <div className="flex items-center gap-4 text-[13px] font-medium uppercase tracking-[0.28em] text-[var(--color-accent)]">
+            <div className="flex items-center gap-4 text-[14px] font-medium uppercase tracking-[0.22em] text-[var(--color-accent)]">
               <span className="h-px w-[58px] bg-[rgba(143,122,90,0.48)]" />
               <span>{data.hero.eyebrow}</span>
               <span className="h-px w-[58px] bg-[rgba(143,122,90,0.48)]" />
             </div>
-            <h1 className="mt-8 max-w-[760px] font-display text-[56px] leading-[0.98] tracking-[-0.03em] text-[var(--color-primary-700)] md:text-[64px] lg:text-[76px]">
+            <h1 className="mt-8 max-w-[700px] font-display text-[54px] leading-[1.04] tracking-[-0.03em] text-[var(--color-primary-700)] md:text-[58px] lg:text-[64px]">
               {data.hero.title}
             </h1>
-            <p className="mt-6 max-w-[748px] text-[18px] leading-[1.62] text-[rgba(58,51,46,0.82)] md:text-[20px]">
+            <p className="mt-6 max-w-[700px] text-[18px] leading-[1.6] text-[rgba(58,51,46,0.82)]">
               {data.hero.description}
             </p>
           </div>
@@ -149,10 +149,10 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.95fr_1.15fr] lg:gap-[72px]">
             <div className="pt-2">
               <SectionLabel icon={<MarkerIcon />}>{data.boutique.label}</SectionLabel>
-              <h2 className="mt-5 font-display text-[34px] leading-[1.02] tracking-[-0.03em] text-[var(--color-primary-700)] md:text-[40px]">
+              <h2 className="mt-5 font-display text-[24px] leading-[1.25] tracking-[-0.02em] text-[var(--color-primary-700)] md:text-[24px]">
                 {data.boutique.title}
               </h2>
-              <div className="mt-5 space-y-1 text-[18px] leading-[1.72] text-[rgba(58,51,46,0.88)] md:text-[20px]">
+              <div className="mt-5 space-y-1 text-[17px] leading-[1.6] text-[rgba(58,51,46,0.88)]">
                 {data.boutique.addressLines.map((line) => (
                   <p key={line}>{line}</p>
                 ))}
@@ -160,7 +160,7 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
 
               <div className="mt-12">
                 <SectionLabel icon={<ClockIcon />}>{data.hours.label}</SectionLabel>
-                <div className="mt-5 space-y-4 text-[18px] leading-[1.6] text-[rgba(58,51,46,0.88)] md:text-[20px]">
+                <div className="mt-5 space-y-4 text-[17px] leading-[1.6] text-[rgba(58,51,46,0.88)]">
                   {data.hours.rows.map((row) => (
                     <div key={row.day} className="grid grid-cols-[1fr_auto] items-center gap-6">
                       <span>{row.day}</span>
@@ -168,12 +168,12 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-[15px] leading-7 text-[var(--color-accent)]">{data.hours.note}</p>
+                <p className="mt-4 text-[15px] leading-[1.5] text-[var(--color-accent)]">{data.hours.note}</p>
               </div>
 
               <div className="mt-12">
                 <SectionLabel icon={<ContactIcon />}>{data.contact.label}</SectionLabel>
-                <div className="mt-5 space-y-4 text-[18px] leading-[1.6] text-[rgba(58,51,46,0.88)] md:text-[20px]">
+                <div className="mt-5 space-y-4 text-[17px] leading-[1.6] text-[rgba(58,51,46,0.88)]">
                   <a href={data.contact.phone.href} className="inline-flex items-center gap-3 transition hover:text-[var(--color-primary-500)]">
                     <ContactIcon />
                     <span>{data.contact.phone.label}</span>
@@ -185,9 +185,9 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
                 </div>
               </div>
 
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
-                <CTAButton action={data.actions.primary} variant="dark" icon="whatsapp" className="min-h-[58px] min-w-[312px] justify-center rounded-[6px] px-8 text-[13px] tracking-[0.22em]" />
-                <CTAButton action={data.actions.secondary} variant="outline-dark" className="min-h-[58px] min-w-[220px] justify-center rounded-[6px] px-8 text-[13px] tracking-[0.22em]" />
+              <div className="mt-12 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-5">
+                <CTAButton action={data.actions.primary} variant="dark" icon="whatsapp" className="min-h-[56px] min-w-[320px] justify-center rounded-[8px] px-8 text-[12px] tracking-[0.2em]" />
+                <CTAButton action={data.actions.secondary} variant="outline-dark" className="min-h-[56px] min-w-[220px] justify-center rounded-[8px] px-8 text-[12px] tracking-[0.2em]" />
               </div>
             </div>
 

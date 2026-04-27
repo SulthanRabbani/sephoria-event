@@ -4,11 +4,11 @@ import { describe, expect, it } from 'vitest'
 import AboutPage from './about/page'
 import CollectionPage from './collection/page'
 import ProductDetailPage from './collection/submariner-no-date/page'
+import ContactPage from './contact/page'
 import JournalDetailPage from './journal/the-art-of-collecting-vintage-rolex/page'
 import JournalPage from './journal/page'
 import BrandDetailPage from './maisons/aerowatch/page'
 import BrandPage from './maisons/page'
-import ContactPage from './contact/page'
 
 describe('Chronologie route pages', () => {
   it('renders the collection listing page from the Figma copy', () => {
@@ -104,19 +104,34 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/aftercare/i)).toBeInTheDocument()
   })
 
-  it('renders the contact page with boutique details, hours, and actions', () => {
+  it('renders the contact page with figma-aligned typography and CTA sizing', () => {
     render(<ContactPage />)
 
-    expect(screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: /plaza indonesia/i })).toBeInTheDocument()
+    const hero = screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })
+    const boutiqueHeading = screen.getByRole('heading', { level: 2, name: /plaza indonesia/i })
+    const whatsappCta = screen.getByRole('link', { name: /inquire via whatsapp/i })
+    const directionsCta = screen.getByRole('link', { name: /get directions/i })
+
+    expect(hero).toBeInTheDocument()
+    expect(hero.className).toContain('text-[54px]')
+    expect(hero.className).toContain('lg:text-[64px]')
+    expect(screen.getByText(/essays, dispatches and quiet observations on horology/i).className).toContain('text-[18px]')
+
+    expect(boutiqueHeading).toBeInTheDocument()
+    expect(boutiqueHeading.className).toContain('text-[24px]')
     expect(screen.getAllByText(/^boutique$/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/^hours$/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/^contact$/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/private viewings available outside opening hours\./i)).toBeInTheDocument()
+    expect(screen.getByText(/private viewings available outside opening hours\./i).className).toContain('text-[15px]')
     expect(screen.getAllByRole('link', { name: /^\+62 812 3456 7890$/i }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: /^concierge@chronologie\.id$/i }).length).toBeGreaterThan(0)
-    expect(screen.getByRole('link', { name: /inquire via whatsapp/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /get directions/i })).toBeInTheDocument()
+
+    expect(whatsappCta.className).toContain('min-h-[56px]')
+    expect(whatsappCta.className).toContain('min-w-[320px]')
+    expect(whatsappCta.className).toContain('rounded-[8px]')
+    expect(directionsCta.className).toContain('min-h-[56px]')
+    expect(directionsCta.className).toContain('min-w-[220px]')
+    expect(directionsCta.className).toContain('rounded-[8px]')
     expect(screen.getByTitle(/chronologie boutique location map/i)).toBeInTheDocument()
   })
 })
