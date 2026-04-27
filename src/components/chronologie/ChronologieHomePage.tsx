@@ -20,7 +20,7 @@ export function ChronologieHomePage({ data }: ChronologieHomePageProps) {
 
   return (
     <div className="bg-[#050505] text-[var(--color-paper)]">
-      <TransparentHeader brand={data.brand} navigation={data.navigation} headerAction={data.headerAction} />
+      <TransparentHeader brand={data.brand} navigation={data.navigation} headerAction={data.headerAction} activeHref="#top" />
       <main>
         <HeroSection hero={data.hero} />
         <FeaturedCollectionsSection collection={data.collection} />

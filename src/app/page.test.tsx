@@ -71,6 +71,7 @@ describe('Chronologie homepage', () => {
     render(<Home />)
 
     expect(screen.getAllByRole('link', { name: /^home$/i }).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /^home$/i }).some((link) => link.getAttribute('aria-current') === 'page')).toBe(true)
     expect(screen.getAllByRole('link', { name: /^collection$/i }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: /^journal$/i }).length).toBeGreaterThan(0)
     expect(screen.getAllByRole('link', { name: /^about$/i }).length).toBeGreaterThan(0)

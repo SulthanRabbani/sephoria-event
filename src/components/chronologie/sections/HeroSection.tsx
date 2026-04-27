@@ -31,9 +31,9 @@ export function HeroSection({ hero }: HeroSectionProps) {
           </h1>
           <p className="mt-[36px] max-w-[616px] text-[16px] leading-7 text-white/78">{hero.description}</p>
 
-          <div className="mt-[52px] flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
-            <CTAButton action={hero.primaryAction} variant="light" icon="whatsapp" />
-            <CTAButton action={hero.secondaryAction} variant="dark-hero" />
+          <div className="mt-[52px] flex flex-col gap-[18px] sm:flex-row sm:items-center sm:gap-5">
+            <CTAButton action={hero.primaryAction} variant="light" icon="whatsapp" className="min-w-[240px] justify-between pl-8 pr-[14px]" />
+            <CTAButton action={hero.secondaryAction} variant="dark-hero" className="min-w-[184px] px-7" />
           </div>
         </div>
       </div>
