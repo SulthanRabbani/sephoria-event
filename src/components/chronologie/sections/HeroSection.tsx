@@ -3,7 +3,7 @@ import type { ChronologieLandingData } from '@/types/chronologie'
 import { CTAButton } from '../primitives/CTAButton'
 
 type HeroSectionProps = {
-  hero: ChronologieLandingData['hero']
+  hero: NonNullable<ChronologieLandingData['hero']>
 }
 
 export function HeroSection({ hero }: HeroSectionProps) {

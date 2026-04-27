@@ -8,6 +8,21 @@ export type ActionLink = {
   href: string
 }
 
+export type InfoItem = {
+  label: string
+  value: string
+}
+
+export type ServiceItem = {
+  title: string
+  description: string
+}
+
+export type FooterColumn = {
+  title: string
+  items: ActionLink[]
+}
+
 export type WatchCardTone = 'charcoal' | 'gold' | 'sand' | 'ivory' | 'steel'
 export type WatchCardSize = 'hero' | 'tall' | 'wide' | 'regular'
 
@@ -31,23 +46,60 @@ export type ArticleCard = {
   tone: ArticleCardTone
 }
 
-export type FooterColumn = {
-  title: string
-  items: ActionLink[]
-}
-
 export type ChronologieLandingData = {
   brand: string
   navigation: NavLink[]
   headerAction: ActionLink
-  hero: {
+  intro: {
+    eyebrow: string
+    title: string
+    description: string
+  }
+  boutique: {
+    overline: string
+    title: string
+    description: string
+    detail: string
+  }
+  story: {
+    eyebrow: string
+    title: string
+    paragraphs: string[]
+  }
+  values: {
+    eyebrow: string
+    vision: {
+      title: string
+      description: string
+    }
+    mission: {
+      title: string
+      description: string
+    }
+  }
+  service: {
+    eyebrow: string
+    title: string
+    description: string
+    action: ActionLink
+    items: ServiceItem[]
+    notes: InfoItem[]
+  }
+  footer: {
+    description: string
+    columns: FooterColumn[]
+    legalLeft: string
+    legalRight: string
+  }
+
+  hero?: {
     eyebrow: string
     title: string
     description: string
     primaryAction: ActionLink
     secondaryAction: ActionLink
   }
-  collection: {
+  collection?: {
     eyebrow: string
     title: string
     description: string
@@ -55,36 +107,29 @@ export type ChronologieLandingData = {
     items: WatchCard[]
     action: ActionLink
   }
-  craft: {
+  craft?: {
     eyebrow: string
     title: string
     description: string
     action: ActionLink
   }
-  invitation: {
+  invitation?: {
     eyebrow: string
     title: string
     description: string
     action: ActionLink
   }
-  journal: {
+  journal?: {
     eyebrow: string
     title: string
     description: string
     featured: ArticleCard
     secondary: ArticleCard[]
   }
-  contactCta: {
+  contactCta?: {
     title: string
     description: string
     primaryAction: ActionLink
     secondaryAction: ActionLink
-  }
-  footer: {
-    description: string
-    columns: FooterColumn[]
-    socials: ActionLink[]
-    legalLeft: string
-    legalRight: string
   }
 }

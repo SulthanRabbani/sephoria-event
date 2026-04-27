@@ -4,7 +4,7 @@ import { CTAButton } from '../primitives/CTAButton'
 import { SectionShell } from '../primitives/SectionShell'
 
 type ShowroomSectionProps = {
-  invitation: ChronologieLandingData['invitation']
+  invitation: NonNullable<ChronologieLandingData['invitation']>
 }
 
 export function ShowroomSection({ invitation }: ShowroomSectionProps) {

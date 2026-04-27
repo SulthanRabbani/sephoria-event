@@ -4,155 +4,85 @@ export const chronologieHome: ChronologieLandingData = {
   brand: 'Chronologie',
   navigation: [
     { label: 'HOME', href: '#top' },
-    { label: 'COLLECTION', href: '#collection' },
-    { label: 'JOURNAL', href: '#journal' },
+    { label: 'COLLECTION', href: '#story' },
+    { label: 'JOURNAL', href: '#story' },
     { label: 'ABOUT', href: '#about' },
-    { label: 'CONTACT', href: '#contact-cta' },
+    { label: 'CONTACT', href: '#contact' },
   ],
   headerAction: { label: 'VISIT THE STORE', href: '#boutique' },
-  hero: {
-    eyebrow: 'THE COLLECTION',
-    title: 'Time, considered with intention.',
+  intro: {
+    eyebrow: 'ABOUT CHRONOLOGIE',
+    title: 'A house built on patience, provenance, and quiet conviction.',
     description:
-      'A small, deliberate selection of timepieces, sourced for collectors who value provenance, proportion, and the quiet pleasure of mechanical detail.',
-    primaryAction: { label: 'SHOP COLLECTION', href: '#collection' },
-    secondaryAction: { label: 'BOOK APPOINTMENT', href: '#boutique' },
+      'Chronologie is a quiet destination for collectors seeking rare watches, considered guidance, and an experience rooted in trust. We work slowly, favouring discernment over spectacle and long-term relationships over transactions.',
   },
-  collection: {
-    eyebrow: 'CURATED SELECTION',
-    title: 'A curated selection of exceptional timepieces',
+  boutique: {
+    overline: 'THE BOUTIQUE',
+    title: 'A calm space for considered collecting in the heart of Jakarta.',
     description:
-      'From restrained divers to elegant dress references, each piece is chosen for its enduring presence and the story it carries on the wrist.',
-    categories: ['ALL PIECES', 'DIVING INSTRUMENTS', 'DRESS TIMEPIECES', 'CHRONOGRAPHS'],
-    action: { label: 'VIEW ALL TIMEPIECES', href: '#contact-cta' },
+      'Our salon is designed for unhurried conversations, close inspection, and the sort of private viewings that let a timepiece reveal itself properly.',
+    detail:
+      'Warm stone, muted oak, and soft shadows frame a setting where provenance and condition take precedence over noise.',
+  },
+  story: {
+    eyebrow: 'OUR STORY',
+    title: 'We began with a belief that timepieces deserve context, not just commerce.',
+    paragraphs: [
+      'Chronologie was founded to create a different pace of luxury retail — one where expertise feels personal, acquisition feels intentional, and every recommendation is shaped by the life a watch will eventually live on the wrist.',
+      'From first conversation to aftercare, we emphasise authenticity, rarity, condition, and fit. The result is a boutique experience that values confidence, discretion, and memory over urgency.',
+    ],
+  },
+  values: {
+    eyebrow: 'OUR POINT OF VIEW',
+    vision: {
+      title: 'Vision',
+      description:
+        'To be the most trusted modern watch house for collectors who value provenance, restraint, and quietly exceptional service.',
+    },
+    mission: {
+      title: 'Mission',
+      description:
+        'To curate remarkable timepieces, explain them with clarity, and support every client long after the first appointment has ended.',
+    },
+  },
+  service: {
+    eyebrow: 'THE SERVICE',
+    title: 'Guidance shaped by connoisseurship, delivered with warmth.',
+    description:
+      'Whether you are beginning a collection or searching for a precise reference, our service is structured to feel personal, discreet, and deeply informed.',
+    action: { label: 'VISIT THE STORE', href: '#contact' },
     items: [
       {
-        brand: 'ROLEX',
-        name: 'Submariner No-Date',
-        summary: 'A study in restraint and precision, rendered in deep charcoal and brushed steel.',
-        cta: 'INQUIRE VIA WHATSAPP',
-        tone: 'charcoal',
-        size: 'hero',
+        title: 'Personal Sourcing',
+        description: 'Targeted search support for rare references, collector briefs, and quietly sought-after pieces.',
       },
       {
-        brand: 'ROLEX',
-        name: 'Cosmograph Daytona',
-        summary: 'Warm gold tones and a poised silhouette for the collector who prefers quiet drama.',
-        cta: 'INQUIRE',
-        tone: 'gold',
-        size: 'tall',
+        title: 'Full Authentication',
+        description: 'Detailed review of provenance, movement, case, dial, and supporting documentation before presentation.',
       },
       {
-        brand: 'PATEK PHILIPPE',
-        name: 'Heritage Chronograph',
-        summary: 'Soft sepia leather, balanced subdials, and an unmistakably formal rhythm.',
-        cta: 'INQUIRE',
-        tone: 'sand',
-        size: 'wide',
+        title: 'Private Viewings',
+        description: 'One-to-one appointments designed for comparison, conversation, and time on the wrist.',
       },
       {
-        brand: 'PATEK PHILIPPE',
-        name: 'Calatrava Ultra-Thin',
-        summary: 'Minimal, dress-led, and composed with a near weightless sense of proportion.',
-        cta: 'INQUIRE',
-        tone: 'ivory',
-        size: 'tall',
-      },
-      {
-        brand: 'AUDEMARS PIGUET',
-        name: 'Royal Oak Jumbo',
-        summary: 'Angular steel surfaces meeting a dark tapisserie-like dial treatment.',
-        cta: 'INQUIRE',
-        tone: 'steel',
-        size: 'regular',
-      },
-      {
-        brand: 'ROLEX',
-        name: 'Datejust 36',
-        summary: 'Classic two-tone warmth with a bright dial and fluted refinement.',
-        cta: 'INQUIRE',
-        tone: 'gold',
-        size: 'regular',
-      },
-      {
-        brand: 'IWC SCHAFFHAUSEN',
-        name: 'Portugieser Automatic',
-        summary: 'A broad white dial and dark strap, built for collectors who prefer measured elegance.',
-        cta: 'INQUIRE',
-        tone: 'ivory',
-        size: 'wide',
+        title: 'Aftercare',
+        description: 'Support with ownership guidance, maintenance referrals, and collector continuity after purchase.',
       },
     ],
-  },
-  craft: {
-    eyebrow: 'THE ATELIER',
-    title: 'We do not sell watches. We curate them.',
-    description:
-      'Every arrival is selected slowly, examined thoroughly, and presented with the same care a collector brings to a piece they intend to keep. Provenance, authenticity, condition, and emotional resonance all matter equally here.',
-    action: { label: 'OUR STORY', href: '#journal' },
-  },
-  invitation: {
-    eyebrow: 'PRIVATE APPOINTMENTS',
-    title: 'An invitation to spend time with time.',
-    description:
-      'Visit the salon for private viewings, guided comparisons, and unhurried conversations around pieces worth wearing for decades.',
-    action: { label: 'BOOK AN APPOINTMENT', href: '#contact-cta' },
-  },
-  journal: {
-    eyebrow: 'THE JOURNAL',
-    title: 'Insights on time, craftsmanship, and collecting',
-    description:
-      'Editorial notes from the atelier, shaped by observation, restoration, and the collectors who continue to return for conversation.',
-    featured: {
-      category: 'COLLECTING',
-      date: 'APRIL 21, 2026',
-      title: 'The Art of Collecting Vintage Rolex',
-      excerpt: 'Understanding the value beyond time: what makes a vintage Rolex more than just a watch.',
-      href: '#contact-cta',
-      tone: 'vintage',
-    },
-    secondary: [
-      {
-        category: 'CRAFTSMANSHIP',
-        date: 'APRIL 18, 2026',
-        title: 'Inside Patek Philippe Craftsmanship',
-        excerpt: 'A legacy of precision passed down through generations, observed in every polished bridge and bevel.',
-        href: '#contact-cta',
-        tone: 'craft',
-      },
-      {
-        category: 'PERSPECTIVE',
-        date: 'APRIL 15, 2026',
-        title: 'What Defines a Modern Luxury Watch',
-        excerpt: 'Beyond aesthetics: the engineering, proportions, and heritage that shape a modern icon.',
-        href: '#contact-cta',
-        tone: 'modern',
-      },
+    notes: [
+      { label: 'By appointment', value: 'Quiet consultations in a private boutique setting.' },
+      { label: 'Collector-led', value: 'Recommendations grounded in taste, proportion, and provenance.' },
+      { label: 'Long-term care', value: 'A relationship that continues well beyond acquisition.' },
     ],
-  },
-  contactCta: {
-    title: 'Begin a quiet conversation.',
-    description: 'Our specialists are here to help you find the right timepiece, source a reference, or arrange a private viewing in Jakarta.',
-    primaryAction: { label: 'INQUIRE VIA WHATSAPP', href: 'https://wa.me/6281234567890' },
-    secondaryAction: { label: 'VISIT THE BOUTIQUE', href: '#boutique' },
   },
   footer: {
-    description: 'A curated atelier of fine timepieces. By appointment, by passion, by tradition.',
+    description: 'A refined house for collectors seeking trusted curation, private viewings, and enduring mechanical beauty.',
     columns: [
-      {
-        title: 'DISCOVER',
-        items: [
-          { label: 'Collection', href: '#collection' },
-          { label: 'Maisons', href: '#collection' },
-          { label: 'Journal', href: '#journal' },
-          { label: 'About', href: '#about' },
-        ],
-      },
       {
         title: 'BOUTIQUE',
         items: [
-          { label: 'Plaza Indonesia, Level 2', href: '#boutique' },
-          { label: 'Jl. M.H. Thamrin Kav. 28-30', href: '#boutique' },
+          { label: 'Plaza Indonesia, Level 3', href: '#boutique' },
+          { label: 'Jl. M.H. Thamrin Kav. 28–30', href: '#boutique' },
           { label: 'Jakarta Pusat 10350', href: '#boutique' },
           { label: 'Indonesia', href: '#boutique' },
         ],
@@ -160,16 +90,20 @@ export const chronologieHome: ChronologieLandingData = {
       {
         title: 'CONTACT',
         items: [
-          { label: '+62 812 3456 7890', href: 'tel:+6281234567890' },
+          { label: '+62 813 3366 7890', href: 'tel:+6281333667890' },
           { label: 'concierge@chronologie.id', href: 'mailto:concierge@chronologie.id' },
         ],
       },
-    ],
-    socials: [
-      { label: 'IG', href: 'https://instagram.com' },
-      { label: 'FB', href: 'https://facebook.com' },
+      {
+        title: 'HOURS',
+        items: [
+          { label: 'Mon — Sat', href: '#contact' },
+          { label: '10:30 — 20:30', href: '#contact' },
+          { label: 'Private appointments available', href: '#contact' },
+        ],
+      },
     ],
     legalLeft: '© 2026 Chronologie. All rights reserved.',
-    legalRight: 'AUTHORISED PRE-OWNED SPECIALISTS',
+    legalRight: 'Curated timepieces, quietly presented.',
   },
 }

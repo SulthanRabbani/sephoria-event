@@ -2,12 +2,11 @@ import type { ChronologieLandingData } from '@/types/chronologie'
 
 import { DarkFooter } from './layout/DarkFooter'
 import { TransparentHeader } from './layout/TransparentHeader'
-import { ContactCtaSection } from './sections/ContactCtaSection'
-import { FeaturedCollectionsSection } from './sections/FeaturedCollectionsSection'
-import { HeroSection } from './sections/HeroSection'
-import { JournalSection } from './sections/JournalSection'
-import { ManifestoSection } from './sections/ManifestoSection'
-import { ShowroomSection } from './sections/ShowroomSection'
+import { BoutiqueImageSection } from './sections/BoutiqueImageSection'
+import { IntroSection } from './sections/IntroSection'
+import { ServiceSection } from './sections/ServiceSection'
+import { StorySection } from './sections/StorySection'
+import { VisionMissionSection } from './sections/VisionMissionSection'
 
 type ChronologieLandingProps = {
   data: ChronologieLandingData
@@ -18,12 +17,11 @@ export function ChronologieLanding({ data }: ChronologieLandingProps) {
     <div className="bg-[var(--color-cream)] text-[var(--color-ink)]">
       <TransparentHeader brand={data.brand} navigation={data.navigation} headerAction={data.headerAction} />
       <main>
-        <HeroSection hero={data.hero} />
-        <FeaturedCollectionsSection collection={data.collection} />
-        <ManifestoSection craft={data.craft} />
-        <ShowroomSection invitation={data.invitation} />
-        <JournalSection journal={data.journal} />
-        <ContactCtaSection contactCta={data.contactCta} />
+        <IntroSection intro={data.intro} />
+        <BoutiqueImageSection boutique={data.boutique} />
+        <StorySection story={data.story} />
+        <VisionMissionSection values={data.values} />
+        <ServiceSection service={data.service} />
       </main>
       <DarkFooter brand={data.brand} footer={data.footer} />
     </div>

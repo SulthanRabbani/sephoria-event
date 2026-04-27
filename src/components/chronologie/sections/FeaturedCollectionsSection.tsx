@@ -5,7 +5,7 @@ import { SectionHeading } from '../primitives/SectionHeading'
 import { SectionShell } from '../primitives/SectionShell'
 
 type FeaturedCollectionsSectionProps = {
-  collection: ChronologieLandingData['collection']
+  collection: NonNullable<ChronologieLandingData['collection']>
 }
 
 const gridClasses = [

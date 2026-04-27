@@ -4,7 +4,7 @@ import { SectionHeading } from '../primitives/SectionHeading'
 import { SectionShell } from '../primitives/SectionShell'
 
 type JournalSectionProps = {
-  journal: ChronologieLandingData['journal']
+  journal: NonNullable<ChronologieLandingData['journal']>
 }
 
 const toneMap: Record<ArticleCardTone, string> = {

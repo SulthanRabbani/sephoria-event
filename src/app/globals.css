@@ -2,15 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-night: #171311;
-  --color-panel: #241f1b;
-  --color-cream: #f7f2eb;
-  --color-sand: #efe2d1;
-  --color-ink: #231d18;
-  --color-copy: #62564c;
-  --color-muted: #96857a;
+  --color-night: #1d1a18;
+  --color-panel: #221f1c;
+  --color-cream: #f5f1ea;
+  --color-surface: #f7f3ec;
+  --color-sand: #efe6d8;
+  --color-ink: #2a2521;
+  --color-copy: #5b524b;
+  --color-muted: #8a7f75;
   --color-paper: #fffdf9;
-  --color-accent: #ccb08d;
+  --color-accent: #bda68c;
 }
 
 * {
@@ -60,10 +61,10 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: 999;
-  opacity: 0.022;
+  opacity: 0.018;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.08' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
 }
 
 ::selection {
-  background: rgba(204, 176, 141, 0.34);
+  background: rgba(189, 166, 140, 0.28);
 }

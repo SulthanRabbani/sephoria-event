@@ -4,7 +4,7 @@ import { CTAButton } from '../primitives/CTAButton'
 import { SectionShell } from '../primitives/SectionShell'
 
 type ContactCtaSectionProps = {
-  contactCta: ChronologieLandingData['contactCta']
+  contactCta: NonNullable<ChronologieLandingData['contactCta']>
 }
 
 export function ContactCtaSection({ contactCta }: ContactCtaSectionProps) {

@@ -4,7 +4,7 @@ import { SectionHeading } from '../primitives/SectionHeading'
 import { SectionShell } from '../primitives/SectionShell'
 
 type ManifestoSectionProps = {
-  craft: ChronologieLandingData['craft']
+  craft: NonNullable<ChronologieLandingData['craft']>
 }
 
 export function ManifestoSection({ craft }: ManifestoSectionProps) {
