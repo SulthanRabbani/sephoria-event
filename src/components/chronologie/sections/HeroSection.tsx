@@ -26,14 +26,19 @@ export function HeroSection({ hero }: HeroSectionProps) {
 
       <div className="relative mx-auto flex min-h-[828px] w-full max-w-[1440px] items-center px-6 pb-18 pt-28 md:px-10 md:pt-32 lg:px-16 lg:pt-36">
         <div className="max-w-[616px] pt-[74px]">
-          <h1 className="max-w-[616px] whitespace-pre-line font-display text-[60px] font-light leading-[0.96] tracking-[-0.02em] text-[#f5f0ea] sm:text-[72px] lg:text-[96px]">
-            {hero.title}
+          <h1
+            aria-label="Time, considered with intention."
+            className="max-w-[760px] font-display text-[60px] font-light leading-[0.96] tracking-[-0.02em] text-[#f5f0ea] sm:text-[72px] lg:text-[96px]"
+          >
+            <span className="inline whitespace-nowrap">Time, considered</span>
+            <br />
+            <span className="inline whitespace-nowrap">with intention.</span>
           </h1>
-          <p className="mt-[36px] max-w-[616px] text-[16px] leading-7 text-white/78">{hero.description}</p>
+          <p className="mt-[34px] max-w-[560px] text-[16px] leading-7 text-white/78">{hero.description}</p>
 
-          <div className="mt-[52px] flex flex-col gap-[18px] sm:flex-row sm:items-center sm:gap-5">
-            <CTAButton action={hero.primaryAction} variant="light" icon="whatsapp" className="min-w-[240px] justify-between pl-8 pr-[14px]" />
-            <CTAButton action={hero.secondaryAction} variant="dark-hero" className="min-w-[184px] px-7" />
+          <div className="mt-[50px] flex flex-col gap-[18px] sm:flex-row sm:items-center sm:gap-4">
+            <CTAButton action={hero.primaryAction} variant="light" icon="whatsapp" className="min-w-[246px] justify-between pl-8 pr-[14px]" />
+            <CTAButton action={hero.secondaryAction} variant="outline-hero" className="min-w-[198px] px-8" />
           </div>
         </div>
       </div>
