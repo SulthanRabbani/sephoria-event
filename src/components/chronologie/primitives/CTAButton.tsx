@@ -8,10 +8,12 @@ type CTAButtonProps = {
 
 export function CTAButton({ action, variant = 'dark', className = '' }: CTAButtonProps) {
   const classes = {
-    dark: 'border-[var(--color-night)] bg-[var(--color-night)] text-[var(--color-paper)] hover:bg-[#2b2420] hover:border-[#2b2420]',
-    light: 'border-[rgba(255,255,255,0.85)] bg-[rgba(255,255,255,0.92)] text-[var(--color-ink)] hover:bg-white',
-    'outline-dark': 'border-[rgba(35,29,24,0.2)] bg-transparent text-[var(--color-ink)] hover:border-[var(--color-ink)] hover:bg-[rgba(35,29,24,0.04)]',
-    'outline-light': 'border-white/28 bg-transparent text-[var(--color-paper)] hover:border-white/55 hover:bg-white/6',
+    dark: 'border-[var(--color-primary-700)] bg-[var(--color-primary-700)] text-[var(--color-white)] hover:bg-[var(--color-primary-600)] hover:border-[var(--color-primary-600)]',
+    light:
+      'border-[rgba(250,250,250,0.92)] bg-[rgba(250,250,250,0.96)] text-[var(--color-primary-700)] hover:bg-[var(--color-white)]',
+    'outline-dark':
+      'border-[var(--color-border)] bg-transparent text-[var(--color-primary-600)] hover:border-[var(--color-primary-500)] hover:bg-[var(--color-primary-50)] hover:text-[var(--color-primary-700)]',
+    'outline-light': 'border-white/26 bg-transparent text-[var(--color-white)] hover:border-white/50 hover:bg-white/8',
   }
 
   return (
