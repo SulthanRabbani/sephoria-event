@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import ContactNativePreviewPage from './page'
 
 describe('ContactNativePreviewPage', () => {
-  it('renders the native candidate preview while keeping the contact copy and CTA actions available', () => {
+  it('renders the native candidate preview while keeping the approved journal-style hero copy and CTA actions available', () => {
     render(<ContactNativePreviewPage />)
 
     expect(screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })).toBeInTheDocument()
