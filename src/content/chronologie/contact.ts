@@ -8,9 +8,9 @@ export const chronologieContactPage = {
   ],
   headerAction: { label: 'VISIT THE STORE', href: '#boutique' },
   hero: {
-    eyebrow: 'THE JOURNAL',
-    title: 'Notes from the atelier.',
-    description: 'Essays, dispatches and quiet observations on horology, craft, and the people who shape it.',
+    eyebrow: 'Contact',
+    title: 'Visit the boutique',
+    description: 'Appointments, enquiries, and private viewings for guests visiting our Jakarta boutique.',
   },
   boutique: {
     label: 'Boutique',
