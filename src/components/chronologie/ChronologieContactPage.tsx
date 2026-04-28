@@ -128,38 +128,38 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
       </header>
 
       <main>
-        <section className="px-6 pb-16 pt-8 md:px-10 lg:px-16 lg:pb-[88px] lg:pt-[44px]">
+        <section className="px-6 pb-14 pt-8 md:px-10 lg:px-16 lg:pb-[72px] lg:pt-[36px]">
           <div className="mx-auto flex max-w-[920px] flex-col items-center text-center">
             <div className="flex items-center gap-5 font-body text-[14px] font-medium uppercase tracking-[0.24em] text-[var(--color-accent)]">
               <span className="h-px w-[56px] bg-[rgba(216,208,197,1)]" />
               <span>{data.hero.eyebrow}</span>
               <span className="h-px w-[56px] bg-[rgba(216,208,197,1)]" />
             </div>
-            <h1 className="mt-7 max-w-[760px] font-display text-[60px] leading-[1.04] tracking-[-0.02em] text-[var(--color-primary-700)]">
+            <h1 className="mt-7 max-w-[760px] font-display text-[60px] leading-[1.05] tracking-[-0.02em] text-[var(--color-primary-700)]">
               {data.hero.title}
             </h1>
-            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.6] text-[#3E3935]">
+            <p className="mt-5 max-w-[720px] text-[18px] leading-[1.5] text-[#3E3935]">
               {data.hero.description}
             </p>
           </div>
         </section>
 
-        <section id="boutique" className="px-6 pb-[78px] md:px-10 lg:px-16 lg:pb-[96px]">
-          <div className="mx-auto grid max-w-[1520px] gap-12 lg:grid-cols-[420px_1fr] lg:gap-[72px]">
-            <div className="w-[420px] pt-2">
+        <section id="boutique" className="px-6 pb-[72px] md:px-10 lg:px-16 lg:pb-[88px]">
+          <div className="mx-auto grid max-w-[1520px] gap-10 lg:grid-cols-[5fr_7fr] lg:gap-[56px]">
+            <div className="max-w-[460px] pt-1">
               <SectionLabel icon={<MarkerIcon />}>{data.boutique.label}</SectionLabel>
-              <h2 className="mt-5 font-display text-[28px] leading-[1.2] tracking-[-0.02em] text-[var(--color-primary-700)]">
+              <h2 className="mt-[18px] font-display text-[28px] leading-[1.2] tracking-[-0.02em] text-[var(--color-primary-700)]">
                 {data.boutique.title}
               </h2>
-              <div className="mt-4 max-w-[360px] space-y-0 text-[18px] leading-[1.7] text-[#332E2A]">
+              <div className="mt-3 max-w-[360px] space-y-0 text-[18px] leading-[1.65] text-[#332E2A]">
                 {data.boutique.addressLines.map((line) => (
                   <p key={line}>{line}</p>
                 ))}
               </div>
 
-              <div className="mt-12">
+              <div className="mt-10">
                 <SectionLabel icon={<ClockIcon />}>{data.hours.label}</SectionLabel>
-                <div className="mt-5 grid max-w-[380px] grid-cols-[1fr_auto] gap-x-10 gap-y-3 text-[18px] leading-[1.55] text-[#332E2A]">
+                <div className="mt-[18px] grid max-w-[380px] grid-cols-[1fr_auto] gap-x-10 gap-y-2 text-[18px] leading-[1.5] text-[#332E2A]">
                   {data.hours.rows.map((row) => (
                     <div key={row.day} className="contents">
                       <span>{row.day}</span>
@@ -167,12 +167,12 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-[16px] leading-[1.6] text-[#8B7A63]">{data.hours.note}</p>
+                <p className="mt-4 text-[15px] leading-[1.55] text-[#8B7A63]">{data.hours.note}</p>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-10">
                 <SectionLabel icon={<ContactIcon />}>{data.contact.label}</SectionLabel>
-                <div className="mt-5 space-y-2 text-[18px] leading-[1.65] text-[#332E2A]">
+                <div className="mt-[18px] space-y-2 text-[18px] leading-[1.6] text-[#332E2A]">
                   <a href={data.contact.phone.href} className="inline-flex items-center gap-3 transition hover:text-[var(--color-primary-500)]">
                     <ContactIcon />
                     <span>{data.contact.phone.label}</span>
@@ -184,22 +184,22 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
                 </div>
               </div>
 
-              <div className="mt-10 flex flex-col gap-[25px] sm:flex-row sm:items-center sm:gap-[25px]">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
                 <CTAButton
                   action={data.actions.primary}
                   variant="dark"
                   icon="whatsapp"
-                  className="min-h-[50px] min-w-[243px] justify-center rounded-[4px] px-8 text-[12px] tracking-[0.18em]"
+                  className="min-h-[56px] min-w-[320px] justify-center rounded-[6px] px-8 text-[15px] tracking-[0.16em]"
                 />
                 <CTAButton
                   action={data.actions.secondary}
                   variant="outline-dark"
-                  className="min-h-[50px] min-w-[203px] justify-center rounded-[4px] px-8 text-[12px] tracking-[0.18em]"
+                  className="min-h-[56px] min-w-[220px] justify-center rounded-[6px] px-8 text-[15px] tracking-[0.16em]"
                 />
               </div>
             </div>
 
-            <div className="relative w-full max-w-[820px] aspect-[4/3] overflow-hidden rounded-[2px] bg-[#ddd4c3] shadow-[0_16px_48px_rgba(40,31,24,0.08)]">
+            <div className="relative w-full max-w-[820px] aspect-[4/3] overflow-hidden rounded-[2px] bg-[#ddd4c3]">
               <iframe
                 title={data.map.title}
                 src={data.map.src}
@@ -212,7 +212,7 @@ export function ChronologieContactPage({ brand, footer, data }: ChronologieConta
         </section>
 
         <footer className="bg-[#2b2622] text-[#f1ece6]">
-          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-10 lg:px-16 lg:pb-10 lg:pt-20">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-10 lg:px-16 lg:pb-[52px] lg:pt-20">
             <div className="grid gap-12 lg:grid-cols-[1.6fr_0.8fr_1.1fr_0.9fr] lg:gap-x-16">
               <div className="max-w-[360px]">
                 <p className="font-display text-[42px] font-light leading-none tracking-[-0.02em] text-[#f4eee8]">{brand}</p>

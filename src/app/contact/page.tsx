@@ -1,5 +1,7 @@
-import { ContactRenderPage } from '@/content/chronologie/render-pages'
+import { ChronologieContactPage } from '@/components/chronologie/ChronologieContactPage'
+import { chronologieContactPage } from '@/content/chronologie/contact'
+import { chronologieHome } from '@/content/chronologie/home'
 
 export default function ContactPage() {
-  return <ContactRenderPage />
+  return <ChronologieContactPage brand={chronologieHome.brand} footer={chronologieHome.footer} data={chronologieContactPage} />
 }
