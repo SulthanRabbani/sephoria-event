@@ -1,3 +1,6 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
+
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
@@ -12,6 +15,12 @@ import ContactPage from './contact/page'
 
 
 describe('Chronologie route pages', () => {
+  it('does not keep the contact native preview route around once contact falls back to the exact render-first page', () => {
+    const previewRoutePath = path.join(process.cwd(), 'src/app/contact-native-preview/page.tsx')
+
+    expect(existsSync(previewRoutePath)).toBe(false)
+  })
+
   it('renders the collection listing page from the Figma copy', () => {
     render(<CollectionPage />)
 
