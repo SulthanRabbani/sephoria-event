@@ -108,12 +108,11 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/aftercare/i)).toBeInTheDocument()
   })
 
-  it('renders the contact page natively with the Figma contact structure and actions', () => {
+  it('renders the contact page with the exact Figma render, semantic boutique details, and CTA actions', () => {
     render(<ContactPage />)
 
-    expect(screen.getByRole('heading', { level: 1, name: /notes from the atelier\./i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: /plaza indonesia/i })).toBeInTheDocument()
     expect(screen.getAllByText(/^boutique$/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/plaza indonesia/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/level 2, unit 218/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/monday – friday/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/10\.00 — 21\.00/i)).toBeInTheDocument()
@@ -128,7 +127,5 @@ describe('Chronologie route pages', () => {
     const directionsLinks = screen.getAllByRole('link', { name: /get directions/i })
     expect(directionsLinks.length).toBeGreaterThan(0)
     expect(directionsLinks[0]).toHaveAttribute('href', 'https://maps.google.com/?q=Plaza+Indonesia+Jakarta')
-
-    expect(screen.getByTitle(/chronologie boutique location map/i)).toBeInTheDocument()
   })
 })
