@@ -96,25 +96,26 @@ describe('Chronologie route pages', () => {
     expect(screen.getAllByRole('link', { name: /explore article/i }).length).toBeGreaterThan(0)
   })
 
-  it('renders the about page with story, vision, mission, and services', () => {
+  it('renders the about page from the exact Figma render with semantic copy and hotspot navigation', () => {
     render(<AboutPage />)
+
+    expect(screen.getByAltText(/chronologie about page design/i)).toBeInTheDocument()
+    expect(screen.queryByAltText(/chronologie showroom interior/i)).not.toBeInTheDocument()
+    expect(screen.queryByAltText(/watch specialist handling a timepiece movement/i)).not.toBeInTheDocument()
 
     expect(screen.getByRole('heading', { level: 1, name: /a house built on patience, provenance, and quiet conviction\./i })).toBeInTheDocument()
     expect(screen.getByText(/about chronologie/i)).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: /^about$/i }).some((link) => link.getAttribute('aria-current') === 'page')).toBe(true)
     expect(screen.getByRole('heading', { level: 2, name: /our story/i })).toBeInTheDocument()
     expect(screen.getByText(/chronologie was born from a single belief/i)).toBeInTheDocument()
-    expect(screen.getByText(/today, our jakarta atelier serves a small community of clients/i)).toBeInTheDocument()
     expect(screen.getAllByText(/^vision$/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/to be indonesia's most considered destination for fine timepieces\./i)).toBeInTheDocument()
     expect(screen.getAllByText(/^mission$/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/to curate, authenticate, and present timepieces with absolute integrity\./i)).toBeInTheDocument()
     expect(screen.getAllByText(/the service/i).length).toBeGreaterThan(0)
     expect(screen.getByText(/an expertise quietly given\./i)).toBeInTheDocument()
-    expect(screen.getByText(/personal sourcing/i)).toBeInTheDocument()
-    expect(screen.getByText(/full authentication/i)).toBeInTheDocument()
-    expect(screen.getByText(/private viewings/i)).toBeInTheDocument()
-    expect(screen.getByText(/aftercare/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/personal sourcing/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/full authentication/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/private viewings/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/aftercare/i).length).toBeGreaterThan(0)
   })
 
   it('renders the contact page with the exact Figma render, semantic boutique details, and CTA actions', () => {
