@@ -103,7 +103,7 @@ describe('Chronologie route pages', () => {
     expect(screen.getAllByRole('link', { name: /explore article/i }).length).toBeGreaterThan(0)
   })
 
-  it('renders the about native preview with a more art-directed hero, staggered value rhythm, and richer atelier framing', () => {
+  it('renders the about native preview with the same restrained centered hero, clean image bands, and symmetric editorial sections as the exact about render', () => {
     render(<AboutNativePreviewPage />)
 
     const showroomImage = screen.getByAltText(/chronologie showroom interior/i)
@@ -113,36 +113,37 @@ describe('Chronologie route pages', () => {
 
     const heroHeading = screen.getByRole('heading', { level: 1, name: /a house built on patience, provenance, and quiet conviction\./i })
     expect(heroHeading.className).toContain('font-display')
-    expect(heroHeading.className).toContain('lg:text-[88px]')
-    expect(heroHeading.className).toContain('max-w-[7.5ch]')
-    expect(heroHeading.className).toContain('leading-[0.95]')
-    expect(heroHeading.parentElement?.className).toContain('text-left')
-    expect(heroHeading.parentElement?.className).toContain('lg:col-span-7')
+    expect(heroHeading.className).toContain('lg:text-[76px]')
+    expect(heroHeading.className).toContain('max-w-[880px]')
+    expect(heroHeading.parentElement?.className).toContain('items-center')
+    expect(heroHeading.parentElement?.className).toContain('text-center')
 
     const heroDescription = screen.getByText(/chronologie was founded in jakarta as a destination for collectors/i)
-    expect(heroDescription.className).toContain('max-w-[34rem]')
-    expect(heroDescription.className).toContain('md:text-[19px]')
-    expect(heroDescription.className).toContain('leading-[1.74]')
+    expect(heroDescription.className).toContain('max-w-[780px]')
+    expect(heroDescription.className).toContain('md:text-[20px]')
 
-    expect(screen.getAllByText(/jakarta atelier/i).length).toBeGreaterThan(0)
-    expect(screen.getByText(/a room for slow decisions, provenance, and private conversation\./i)).toBeInTheDocument()
+    expect(screen.queryByText(/^jakarta atelier$/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/^private viewing$/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/a room for slow decisions, provenance, and private conversation\./i)).not.toBeInTheDocument()
 
-    const storyHeading = screen.getByRole('heading', { level: 2, name: /our story/i })
-    expect(storyHeading.className).toContain('lg:text-[60px]')
-
-    const missionHeading = screen.getByRole('heading', {
+    const valuesVisionHeading = screen.getByRole('heading', {
+      level: 2,
+      name: /to be indonesia's most considered destination for fine timepieces\./i,
+    })
+    const valuesMissionHeading = screen.getByRole('heading', {
       level: 2,
       name: /to curate, authenticate, and present timepieces with absolute integrity\./i,
     })
-    expect(missionHeading.closest('article')?.className).toContain('lg:col-start-8')
-    expect(missionHeading.closest('article')?.className).toContain('lg:mt-20')
+    expect(valuesVisionHeading.closest('article')?.className ?? '').not.toContain('lg:col-start-8')
+    expect(valuesMissionHeading.closest('article')?.className ?? '').not.toContain('lg:col-start-8')
+    expect(valuesMissionHeading.closest('article')?.className ?? '').not.toContain('lg:mt-20')
 
     const serviceHeading = screen.getByRole('heading', { level: 2, name: /an expertise quietly given\./i })
-    expect(serviceHeading.className).toContain('lg:text-[64px]')
+    expect(serviceHeading.className).toContain('lg:text-[58px]')
 
     expect(serviceImage.parentElement?.className).toContain('aspect-[544/835]')
-    expect(serviceImage.parentElement?.className).toContain('lg:-translate-y-10')
-    expect(screen.getByText(/handled by hand, never hurried\./i)).toBeInTheDocument()
+    expect(serviceImage.parentElement?.className ?? '').not.toContain('lg:-translate-y-10')
+    expect(screen.queryByText(/handled by hand, never hurried\./i)).not.toBeInTheDocument()
 
     const aboutLinks = screen.getAllByRole('link', { name: /^about$/i })
     expect(aboutLinks.some((link) => link.getAttribute('aria-current') === 'page')).toBe(true)
@@ -150,7 +151,7 @@ describe('Chronologie route pages', () => {
     expect(screen.getByRole('link', { name: /visit the store/i })).toHaveAttribute('href', '/contact')
     expect(screen.getByText(/for over a decade, our specialists have travelled/i)).toBeInTheDocument()
     expect(screen.getByText(/every watch in our care is sourced personally/i)).toBeInTheDocument()
-    expect(screen.getByText(/visits by appointment/i)).toBeInTheDocument()
+    expect(screen.queryByText(/visits by appointment/i)).not.toBeInTheDocument()
   })
 
   it('renders the about page from the exact Figma render with semantic copy and hotspot navigation', () => {
