@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
 import AboutPage from './about/page'
+import AboutNativePreviewPage from './about-native-preview/page'
 import CollectionPage from './collection/page'
 import ProductDetailPage from './collection/submariner-no-date/page'
 import MaisonDetailPage from './maisons/aerowatch/page'
@@ -15,6 +16,12 @@ import ContactPage from './contact/page'
 
 
 describe('Chronologie route pages', () => {
+  it('keeps an about native preview route while the live about page remains render-first exact', () => {
+    const previewRoutePath = path.join(process.cwd(), 'src/app/about-native-preview/page.tsx')
+
+    expect(existsSync(previewRoutePath)).toBe(true)
+  })
+
   it('does not keep the contact native preview route around once contact falls back to the exact render-first page', () => {
     const previewRoutePath = path.join(process.cwd(), 'src/app/contact-native-preview/page.tsx')
 
@@ -94,6 +101,56 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/inside patek philippe craftsmanship/i)).toBeInTheDocument()
     expect(screen.getByText(/what defines a modern luxury watch/i)).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: /explore article/i }).length).toBeGreaterThan(0)
+  })
+
+  it('renders the about native preview with a more art-directed hero, staggered value rhythm, and richer atelier framing', () => {
+    render(<AboutNativePreviewPage />)
+
+    const showroomImage = screen.getByAltText(/chronologie showroom interior/i)
+    const serviceImage = screen.getByAltText(/watch specialist handling a timepiece movement/i)
+    expect(showroomImage).toBeInTheDocument()
+    expect(serviceImage).toBeInTheDocument()
+
+    const heroHeading = screen.getByRole('heading', { level: 1, name: /a house built on patience, provenance, and quiet conviction\./i })
+    expect(heroHeading.className).toContain('font-display')
+    expect(heroHeading.className).toContain('lg:text-[88px]')
+    expect(heroHeading.className).toContain('max-w-[7.5ch]')
+    expect(heroHeading.className).toContain('leading-[0.95]')
+    expect(heroHeading.parentElement?.className).toContain('text-left')
+    expect(heroHeading.parentElement?.className).toContain('lg:col-span-7')
+
+    const heroDescription = screen.getByText(/chronologie was founded in jakarta as a destination for collectors/i)
+    expect(heroDescription.className).toContain('max-w-[34rem]')
+    expect(heroDescription.className).toContain('md:text-[19px]')
+    expect(heroDescription.className).toContain('leading-[1.74]')
+
+    expect(screen.getAllByText(/jakarta atelier/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/a room for slow decisions, provenance, and private conversation\./i)).toBeInTheDocument()
+
+    const storyHeading = screen.getByRole('heading', { level: 2, name: /our story/i })
+    expect(storyHeading.className).toContain('lg:text-[60px]')
+
+    const missionHeading = screen.getByRole('heading', {
+      level: 2,
+      name: /to curate, authenticate, and present timepieces with absolute integrity\./i,
+    })
+    expect(missionHeading.closest('article')?.className).toContain('lg:col-start-8')
+    expect(missionHeading.closest('article')?.className).toContain('lg:mt-20')
+
+    const serviceHeading = screen.getByRole('heading', { level: 2, name: /an expertise quietly given\./i })
+    expect(serviceHeading.className).toContain('lg:text-[64px]')
+
+    expect(serviceImage.parentElement?.className).toContain('aspect-[544/835]')
+    expect(serviceImage.parentElement?.className).toContain('lg:-translate-y-10')
+    expect(screen.getByText(/handled by hand, never hurried\./i)).toBeInTheDocument()
+
+    const aboutLinks = screen.getAllByRole('link', { name: /^about$/i })
+    expect(aboutLinks.some((link) => link.getAttribute('aria-current') === 'page')).toBe(true)
+
+    expect(screen.getByRole('link', { name: /visit the store/i })).toHaveAttribute('href', '/contact')
+    expect(screen.getByText(/for over a decade, our specialists have travelled/i)).toBeInTheDocument()
+    expect(screen.getByText(/every watch in our care is sourced personally/i)).toBeInTheDocument()
+    expect(screen.getByText(/visits by appointment/i)).toBeInTheDocument()
   })
 
   it('renders the about page from the exact Figma render with semantic copy and hotspot navigation', () => {
