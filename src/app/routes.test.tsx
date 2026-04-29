@@ -103,7 +103,7 @@ describe('Chronologie route pages', () => {
     expect(screen.getAllByRole('link', { name: /explore article/i }).length).toBeGreaterThan(0)
   })
 
-  it('renders the about native preview with the same restrained centered hero, clean image bands, and symmetric editorial sections as the exact about render', () => {
+  it('renders the about native preview with the same restrained centered hero, moderate showroom band, tighter editorial sections, and denser footer rhythm as the exact about render', () => {
     render(<AboutNativePreviewPage />)
 
     const showroomImage = screen.getByAltText(/chronologie showroom interior/i)
@@ -113,18 +113,29 @@ describe('Chronologie route pages', () => {
 
     const heroHeading = screen.getByRole('heading', { level: 1, name: /a house built on patience, provenance, and quiet conviction\./i })
     expect(heroHeading.className).toContain('font-display')
-    expect(heroHeading.className).toContain('lg:text-[76px]')
-    expect(heroHeading.className).toContain('max-w-[880px]')
+    expect(heroHeading.className).toContain('lg:text-[68px]')
+    expect(heroHeading.className).toContain('max-w-[660px]')
     expect(heroHeading.parentElement?.className).toContain('items-center')
     expect(heroHeading.parentElement?.className).toContain('text-center')
 
     const heroDescription = screen.getByText(/chronologie was founded in jakarta as a destination for collectors/i)
-    expect(heroDescription.className).toContain('max-w-[780px]')
-    expect(heroDescription.className).toContain('md:text-[20px]')
+    expect(heroDescription.className).toContain('max-w-[560px]')
+    expect(heroDescription.className).toContain('md:text-[18px]')
+
+    expect(showroomImage.parentElement?.className).toContain('lg:h-[410px]')
+    expect(showroomImage.parentElement?.className).not.toContain('lg:h-[740px]')
 
     expect(screen.queryByText(/^jakarta atelier$/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/^private viewing$/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/a room for slow decisions, provenance, and private conversation\./i)).not.toBeInTheDocument()
+
+    const storyHeading = screen.getByRole('heading', { level: 2, name: /our story/i })
+    expect(storyHeading.className).toContain('lg:text-[48px]')
+    const storySection = storyHeading.closest('section')
+    expect(storySection?.className ?? '').toContain('lg:pb-[56px]')
+    expect(storySection?.firstElementChild?.className ?? '').toContain('max-w-[1040px]')
+    expect(storySection?.firstElementChild?.className ?? '').toContain('lg:grid-cols-[0.34fr_0.66fr]')
+    expect(storySection?.firstElementChild?.className ?? '').toContain('lg:gap-12')
 
     const valuesVisionHeading = screen.getByRole('heading', {
       level: 2,
@@ -134,16 +145,27 @@ describe('Chronologie route pages', () => {
       level: 2,
       name: /to curate, authenticate, and present timepieces with absolute integrity\./i,
     })
+    expect(valuesVisionHeading.className).toContain('lg:text-[36px]')
+    expect(valuesMissionHeading.className).toContain('lg:text-[36px]')
     expect(valuesVisionHeading.closest('article')?.className ?? '').not.toContain('lg:col-start-8')
     expect(valuesMissionHeading.closest('article')?.className ?? '').not.toContain('lg:col-start-8')
     expect(valuesMissionHeading.closest('article')?.className ?? '').not.toContain('lg:mt-20')
+    expect(valuesVisionHeading.closest('section')?.className ?? '').toContain('lg:pb-[64px]')
+    expect(valuesVisionHeading.closest('section')?.firstElementChild?.className ?? '').toContain('lg:gap-12')
 
     const serviceHeading = screen.getByRole('heading', { level: 2, name: /an expertise quietly given\./i })
-    expect(serviceHeading.className).toContain('lg:text-[58px]')
+    expect(serviceHeading.className).toContain('lg:text-[40px]')
+    expect(serviceHeading.closest('section')?.className ?? '').toContain('lg:pb-[60px]')
+    expect(serviceHeading.closest('section')?.firstElementChild?.className ?? '').toContain('lg:grid-cols-[0.45fr_0.55fr]')
+    expect(serviceHeading.closest('section')?.firstElementChild?.className ?? '').toContain('lg:gap-12')
 
     expect(serviceImage.parentElement?.className).toContain('aspect-[544/835]')
     expect(serviceImage.parentElement?.className ?? '').not.toContain('lg:-translate-y-10')
     expect(screen.queryByText(/handled by hand, never hurried\./i)).not.toBeInTheDocument()
+
+    const serviceItems = screen.getAllByRole('heading', { level: 3 })
+    expect(serviceItems[0].className).toContain('md:text-[20px]')
+    expect(serviceItems[0].closest('article')?.className).toContain('py-[18px]')
 
     const aboutLinks = screen.getAllByRole('link', { name: /^about$/i })
     expect(aboutLinks.some((link) => link.getAttribute('aria-current') === 'page')).toBe(true)
@@ -152,6 +174,11 @@ describe('Chronologie route pages', () => {
     expect(screen.getByText(/for over a decade, our specialists have travelled/i)).toBeInTheDocument()
     expect(screen.getByText(/every watch in our care is sourced personally/i)).toBeInTheDocument()
     expect(screen.queryByText(/visits by appointment/i)).not.toBeInTheDocument()
+
+    const footer = screen.getByText(/a curated atelier of fine timepieces/i).closest('footer')
+    expect(footer?.className).toContain('bg-[#2b2622]')
+    expect(footer?.firstElementChild?.className ?? '').toContain('lg:pt-12')
+    expect(footer?.firstElementChild?.className ?? '').toContain('lg:pb-6')
   })
 
   it('renders the about page from the exact Figma render with semantic copy and hotspot navigation', () => {
